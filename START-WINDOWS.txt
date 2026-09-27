@@ -1,0 +1,12 @@
+BHOOMI-TRACK - Windows Start
+
+1. Open PowerShell in this folder.
+2. Run: npm.cmd install
+3. Run: npm.cmd start
+4. Open: http://localhost:5000
+
+Demo login:
+admin@bhoomitrack.gov.in
+Admin@123
+
+No PostgreSQL or Python build tools are required.
