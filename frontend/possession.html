@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Land Possession - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadPossession()">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= POSSESSION PAGE ================= -->
+
+    <main class="possession-page">
+
+        <div class="possession-container">
+
+            <!-- HEADER -->
+
+            <div class="possession-header">
+
+                <div class="possession-icon">
+                    🏠
+                </div>
+
+                <p class="possession-small-title">
+                    LAND ACQUISITION PROCESS
+                </p>
+
+                <h1>
+                    Land Possession & Handover
+                </h1>
+
+                <p>
+                    View the possession and handover status of
+                    the selected land parcel.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <div class="possession-summary">
+
+                <div class="possession-summary-item">
+
+                    <span>Survey Number</span>
+
+                    <strong id="possessionSurvey">
+                        SUR-1025
+                    </strong>
+
+                </div>
+
+
+                <div class="possession-summary-item">
+
+                    <span>Landowner</span>
+
+                    <strong id="possessionOwner">
+                        Rajesh Patil
+                    </strong>
+
+                </div>
+
+
+                <div class="possession-summary-item">
+
+                    <span>Location</span>
+
+                    <strong id="possessionLocation">
+                        Dhule
+                    </strong>
+
+                </div>
+
+
+                <div class="possession-summary-item">
+
+                    <span>Possession Status</span>
+
+                    <strong class="possession-status"
+                            id="possessionStatus">
+                        Pending
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= POSSESSION STATUS ================= -->
+
+            <div class="possession-card">
+
+                <h2>
+                    🏠 Possession Status
+                </h2>
+
+                <div class="possession-status-box">
+
+                    <div class="possession-status-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <h3 id="possessionTitle">
+                            Possession Pending
+                        </h3>
+
+                        <p id="possessionMessage">
+                            Land possession will begin after
+                            final approval.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= HANDOVER INFORMATION ================= -->
+
+            <div class="possession-card">
+
+                <h2>
+                    🏛️ Handover Information
+                </h2>
+
+                <div class="handover-grid">
+
+                    <div class="handover-box">
+
+                        <span>Government Authority</span>
+
+                        <strong id="handoverAuthority">
+                            District Collector Office
+                        </strong>
+
+                    </div>
+
+
+                    <div class="handover-box">
+
+                        <span>Possession Officer</span>
+
+                        <strong id="possessionOfficer">
+                            Land Acquisition Officer
+                        </strong>
+
+                    </div>
+
+
+                    <div class="handover-box">
+
+                        <span>Possession Date</span>
+
+                        <strong id="possessionDate">
+                            Pending
+                        </strong>
+
+                    </div>
+
+
+                    <div class="handover-box">
+
+                        <span>Handover Status</span>
+
+                        <strong id="handoverStatus">
+                            Pending
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= POSSESSION PROCESS ================= -->
+
+            <div class="possession-card">
+
+                <h2>
+                    📋 Possession Process
+                </h2>
+
+                <div class="possession-process">
+
+                    <div class="possession-process-item completed">
+
+                        <div class="process-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Final Approval
+                            </strong>
+
+                            <p>
+                                Government approval completed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="possession-process-item active">
+
+                        <div class="process-icon">
+                            2
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Possession Notice
+                            </strong>
+
+                            <p>
+                                Possession notice is issued to
+                                the landowner.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="possession-process-item pending">
+
+                        <div class="process-icon">
+                            3
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Land Handover
+                            </strong>
+
+                            <p>
+                                Physical possession of land is
+                                handed over to the authority.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="possession-process-item pending">
+
+                        <div class="process-icon">
+                            4
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Acquisition Completed
+                            </strong>
+
+                            <p>
+                                Acquisition process is officially
+                                completed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CERTIFICATE ================= -->
+
+            <div class="certificate-card">
+
+                <div class="certificate-icon">
+                    📜
+                </div>
+
+                <div>
+
+                    <h3>
+                        Possession Certificate
+                    </h3>
+
+                    <p>
+                        The possession certificate will be available
+                        after successful land handover.
+                    </p>
+
+                    <button class="certificate-btn"
+                            onclick="downloadCertificate()">
+                        📥 View Certificate
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= NOTICE ================= -->
+
+            <div class="possession-notice">
+
+                <div class="notice-icon">
+                    ℹ️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Important Information
+                    </h3>
+
+                    <p>
+                        Land possession is carried out by the
+                        competent government authority after final
+                        approval and completion of required legal
+                        procedures.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ACTIONS ================= -->
+
+            <div class="possession-actions">
+
+                <a href="approval.html"
+                   class="back-btn">
+                    ← Back to Approval
+                </a>
+
+                <a href="dashboard.html"
+                   class="possession-next-btn">
+                    View Dashboard →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                🌱 BHOOMI TREK
+            </h2>
+
+            <p>
+                Transparent and efficient land acquisition
+                management system.
+            </p>
+
+            <p>
+                © 2026 Bhoomi Trek. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

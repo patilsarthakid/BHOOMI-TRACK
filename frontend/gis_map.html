@@ -1,0 +1,395 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GIS Land Map - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadGISMap()">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= GIS PAGE ================= -->
+
+    <main class="gis-page">
+
+        <div class="gis-container">
+
+            <!-- HEADER -->
+
+            <div class="gis-header">
+
+                <div class="gis-icon">
+                    🗺️
+                </div>
+
+                <p class="gis-small-title">
+                    GEOGRAPHICAL INFORMATION SYSTEM
+                </p>
+
+                <h1>
+                    GIS Land Map
+                </h1>
+
+                <p>
+                    Visualize land parcels and acquisition status
+                    based on the selected location.
+                </p>
+
+            </div>
+
+
+            <!-- ================= LOCATION ================= -->
+
+            <div class="gis-location-card">
+
+                <div>
+                    <span>📍 Selected Location</span>
+
+                    <h3 id="gisLocation">
+                        Dhule, Maharashtra
+                    </h3>
+                </div>
+
+                <div>
+                    <span>🏗️ Acquisition Purpose</span>
+
+                    <h3 id="gisPurpose">
+                        Government Infrastructure
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <!-- ================= MAP ================= -->
+
+            <div class="gis-map-card">
+
+                <div class="gis-map-top">
+
+                    <div>
+
+                        <h2>
+                            🗺️ Land Parcel Map
+                        </h2>
+
+                        <p>
+                            Click on a parcel to view its details.
+                        </p>
+
+                    </div>
+
+                    <button class="map-reset-btn"
+                            onclick="resetMap()">
+                        🔄 Reset Map
+                    </button>
+
+                </div>
+
+
+                <!-- MAP AREA -->
+
+                <div class="gis-map">
+
+                    <div class="map-road road-one"></div>
+
+                    <div class="map-road road-two"></div>
+
+                    <div class="map-water"></div>
+
+
+                    <!-- PARCEL 1 -->
+
+                    <div class="land-parcel parcel-one"
+                         onclick="selectGISParcel('SUR-1025')">
+
+                        <span>
+                            SUR-1025
+                        </span>
+
+                    </div>
+
+
+                    <!-- PARCEL 2 -->
+
+                    <div class="land-parcel parcel-two"
+                         onclick="selectGISParcel('SUR-1042')">
+
+                        <span>
+                            SUR-1042
+                        </span>
+
+                    </div>
+
+
+                    <!-- PARCEL 3 -->
+
+                    <div class="land-parcel parcel-three"
+                         onclick="selectGISParcel('SUR-1088')">
+
+                        <span>
+                            SUR-1088
+                        </span>
+
+                    </div>
+
+
+                    <!-- PARCEL 4 -->
+
+                    <div class="land-parcel parcel-four"
+                         onclick="selectGISParcel('SUR-1112')">
+
+                        <span>
+                            SUR-1112
+                        </span>
+
+                    </div>
+
+
+                    <!-- MAP LABELS -->
+
+                    <div class="map-label village-label">
+                        📍 Village Area
+                    </div>
+
+                    <div class="map-label road-label">
+                        🛣️ Main Road
+                    </div>
+
+                    <div class="map-label water-label">
+                        💧 Water Body
+                    </div>
+
+                </div>
+
+
+                <!-- ================= LEGEND ================= -->
+
+                <div class="map-legend">
+
+                    <h3>
+                        Map Legend
+                    </h3>
+
+                    <div class="legend-items">
+
+                        <div class="legend-item">
+                            <span class="legend-box in-progress"></span>
+                            In Progress
+                        </div>
+
+                        <div class="legend-item">
+                            <span class="legend-box verification-map"></span>
+                            Verification
+                        </div>
+
+                        <div class="legend-item">
+                            <span class="legend-box compensation-map"></span>
+                            Compensation
+                        </div>
+
+                        <div class="legend-item">
+                            <span class="legend-box completed-map"></span>
+                            Completed
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SELECTED PARCEL ================= -->
+
+            <div class="gis-selected-card">
+
+                <h2>
+                    📋 Selected Land Parcel
+                </h2>
+
+                <div class="gis-selected-grid">
+
+                    <div>
+                        <span>Survey Number</span>
+
+                        <strong id="selectedGISSurvey">
+                            Select a parcel
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>Landowner</span>
+
+                        <strong id="selectedGISOwner">
+                            -
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>Land Area</span>
+
+                        <strong id="selectedGISArea">
+                            -
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>Status</span>
+
+                        <strong id="selectedGISStatus">
+                            -
+                        </strong>
+                    </div>
+
+                </div>
+
+                <button class="gis-view-btn"
+                        onclick="viewSelectedGISParcel()">
+                    📋 View Land Information
+                </button>
+
+            </div>
+
+
+            <!-- ================= GIS INFORMATION ================= -->
+
+            <div class="gis-info-grid">
+
+                <div class="gis-info-box">
+
+                    <div class="gis-info-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Location Mapping
+                    </h3>
+
+                    <p>
+                        View land parcels according to
+                        State, District, Taluka and Village.
+                    </p>
+
+                </div>
+
+
+                <div class="gis-info-box">
+
+                    <div class="gis-info-icon">
+                        🌾
+                    </div>
+
+                    <h3>
+                        Land Identification
+                    </h3>
+
+                    <p>
+                        Each land parcel is identified using
+                        its unique survey number.
+                    </p>
+
+                </div>
+
+
+                <div class="gis-info-box">
+
+                    <div class="gis-info-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Status Visualization
+                    </h3>
+
+                    <p>
+                        Different parcel indicators represent
+                        different acquisition stages.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ACTIONS ================= -->
+
+            <div class="gis-actions">
+
+                <a href="dashboard.html"
+                   class="back-btn">
+                    ← Back to Dashboard
+                </a>
+
+                <a href="delay_detection.html"
+                   class="gis-next-btn">
+                    View Delay Detection →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                🌱 BHOOMI TREK
+            </h2>
+
+            <p>
+                Transparent and efficient land acquisition
+                management system.
+            </p>
+
+            <p>
+                © 2026 Bhoomi Trek. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

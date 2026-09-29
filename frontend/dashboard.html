@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadDashboard()">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <main class="dashboard-page">
+
+        <div class="dashboard-container">
+
+            <!-- HEADER -->
+
+            <div class="dashboard-header">
+
+                <div class="dashboard-icon">
+                    📊
+                </div>
+
+                <p class="dashboard-small-title">
+                    BHOOMI TREK ANALYTICS
+                </p>
+
+                <h1>
+                    Land Acquisition Dashboard
+                </h1>
+
+                <p>
+                    Monitor land acquisition progress,
+                    compensation and delayed cases.
+                </p>
+
+            </div>
+
+
+            <!-- ================= LOCATION ================= -->
+
+            <div class="dashboard-location">
+
+                <span>📍 Current Location</span>
+
+                <strong id="dashboardLocation">
+                    Dhule, Maharashtra
+                </strong>
+
+            </div>
+
+
+            <!-- ================= SUMMARY CARDS ================= -->
+
+            <div class="dashboard-summary">
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-card-icon">
+                        🌾
+                    </div>
+
+                    <div>
+                        <span>Total Land Parcels</span>
+                        <h2 id="totalParcels">4</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-card-icon">
+                        🏗️
+                    </div>
+
+                    <div>
+                        <span>Under Acquisition</span>
+                        <h2 id="underAcquisition">3</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-card-icon">
+                        ✅
+                    </div>
+
+                    <div>
+                        <span>Completed</span>
+                        <h2 id="completedCases">1</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-card-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+                        <span>Delayed Cases</span>
+                        <h2 id="delayedCases">1</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROGRESS ================= -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    📈 Overall Acquisition Progress
+                </h2>
+
+                <div class="overall-progress">
+
+                    <div class="progress-info">
+
+                        <span>
+                            Acquisition Completion
+                        </span>
+
+                        <strong id="dashboardProgress">
+                            57%
+                        </strong>
+
+                    </div>
+
+                    <div class="dashboard-progress-bar">
+
+                        <div class="dashboard-progress-fill"
+                             id="dashboardProgressFill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STAGE SUMMARY ================= -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    📋 Acquisition Stage Summary
+                </h2>
+
+                <div class="stage-grid">
+
+                    <div class="stage-box">
+
+                        <span>Land Identification</span>
+
+                        <strong>4</strong>
+
+                        <small>Completed</small>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <span>Verification</span>
+
+                        <strong>1</strong>
+
+                        <small>In Progress</small>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <span>Compensation</span>
+
+                        <strong>1</strong>
+
+                        <small>In Progress</small>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <span>Final Approval</span>
+
+                        <strong>1</strong>
+
+                        <small>Pending</small>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <span>Possession</span>
+
+                        <strong>1</strong>
+
+                        <small>Pending</small>
+
+                    </div>
+
+
+                    <div class="stage-box">
+
+                        <span>Completed</span>
+
+                        <strong>1</strong>
+
+                        <small>Acquisition Complete</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= COMPENSATION ================= -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    💰 Compensation Overview
+                </h2>
+
+                <div class="compensation-dashboard">
+
+                    <div class="compensation-dashboard-box">
+
+                        <span>
+                            Total Estimated Compensation
+                        </span>
+
+                        <h2>
+                            ₹18,00,000
+                        </h2>
+
+                    </div>
+
+
+                    <div class="compensation-dashboard-box">
+
+                        <span>
+                            Compensation Paid
+                        </span>
+
+                        <h2>
+                            ₹6,50,000
+                        </h2>
+
+                    </div>
+
+
+                    <div class="compensation-dashboard-box">
+
+                        <span>
+                            Pending Compensation
+                        </span>
+
+                        <h2>
+                            ₹11,50,000
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= DELAY ALERT ================= -->
+
+            <div class="dashboard-delay">
+
+    <div class="delay-dashboard-icon">
+        ⚠️
+    </div>
+
+    <div>
+        <h3>Delay Detection Alert</h3>
+
+        <p>
+            One land acquisition case has been detected
+            with possible processing delay.
+        </p>
+
+        <a href="delay_detection.html"
+           class="delay-dashboard-btn">
+            🔍 View Delay Details
+        </a>
+        <a href="notifications.html"
+   class="dashboard-notification-btn">
+    🔔 View Notifications
+</a>
+    </div>
+
+</div>
+
+
+            <!-- ================= RECENT CASES ================= -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    🗂️ Recent Land Acquisition Cases
+                </h2>
+
+                <div class="dashboard-table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Survey Number</th>
+                                <th>Landowner</th>
+                                <th>Area</th>
+                                <th>Stage</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>SUR-1025</td>
+
+                                <td>Rajesh Patil</td>
+
+                                <td>2.5 Acres</td>
+
+                                <td>Verification</td>
+
+                                <td>
+                                    <span class="dashboard-status progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1042</td>
+
+                                <td>Sunil Patil</td>
+
+                                <td>3.0 Acres</td>
+
+                                <td>Verification</td>
+
+                                <td>
+                                    <span class="dashboard-status verification">
+                                        Verification
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1088</td>
+
+                                <td>Mahesh Patil</td>
+
+                                <td>1.5 Acres</td>
+
+                                <td>Compensation</td>
+
+                                <td>
+                                    <span class="dashboard-status compensation">
+                                        Compensation
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1112</td>
+
+                                <td>Prakash More</td>
+
+                                <td>3.5 Acres</td>
+
+                                <td>Completed</td>
+
+                                <td>
+                                    <span class="dashboard-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= GIS BUTTON ================= -->
+
+            <div class="dashboard-gis">
+
+                <div>
+
+                    <h2>
+                        🗺️ View Land on GIS Map
+                    </h2>
+
+                    <p>
+                        Visualize land parcels and acquisition
+                        locations on an interactive map.
+                    </p>
+
+                </div>
+
+                <a href="gis_map.html"
+                   class="gis-dashboard-btn">
+                    Open GIS Map →
+                </a>
+
+            </div>
+
+
+            <!-- ================= ACTIONS ================= -->
+
+            <div class="dashboard-actions">
+
+                <a href="location_search.html"
+                   class="back-btn">
+                    ← Search Another Location
+                </a>
+
+                <a href="delay_detection.html"
+                   class="dashboard-next-btn">
+                    View Delay Detection →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                🌱 BHOOMI TREK
+            </h2>
+
+            <p>
+                Transparent and efficient land acquisition
+                management system.
+            </p>
+
+            <p>
+                © 2026 Bhoomi Trek. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="api/api.js"></script>`r`n    <script src="script.js"></script>
+
+</body>
+
+</html>
+

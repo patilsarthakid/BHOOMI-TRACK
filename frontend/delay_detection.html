@@ -1,0 +1,739 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delay Detection - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadDelayDetection()">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- MAIN PAGE -->
+    <main class="delay-page">
+
+        <div class="delay-container">
+
+            <!-- HEADER -->
+            <div class="delay-header">
+
+                <div class="delay-icon">
+                    ⚠️
+                </div>
+
+                <p class="delay-small-title">
+                    AI & ANALYTICS
+                </p>
+
+                <h1>
+                    Delay Detection
+                </h1>
+
+                <p>
+                    Identify delayed land acquisition cases and understand
+                    the possible reasons for delay.
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="delay-location-card">
+
+                <div>
+                    <strong>📍 Current Location</strong>
+
+                    <p id="delayLocation">
+                        Loading...
+                    </p>
+                </div>
+
+                <div>
+                    <strong>🏗️ Acquisition Purpose</strong>
+
+                    <p id="delayPurpose">
+                        Loading...
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="delay-summary">
+
+                <div class="delay-stat-card">
+
+                    <div class="delay-stat-icon">
+                        📋
+                    </div>
+
+                    <h3 id="delayTotalCases">
+                        4
+                    </h3>
+
+                    <p>
+                        Total Cases
+                    </p>
+
+                </div>
+
+
+                <div class="delay-stat-card">
+
+                    <div class="delay-stat-icon">
+                        ⚠️
+                    </div>
+
+                    <h3 id="delayCases">
+                        1
+                    </h3>
+
+                    <p>
+                        Delayed Cases
+                    </p>
+
+                </div>
+
+
+                <div class="delay-stat-card">
+
+                    <div class="delay-stat-icon">
+                        📅
+                    </div>
+
+                    <h3 id="averageDelay">
+                        18
+                    </h3>
+
+                    <p>
+                        Average Delay Days
+                    </p>
+
+                </div>
+
+
+                <div class="delay-stat-card">
+
+                    <div class="delay-stat-icon">
+                        🚨
+                    </div>
+
+                    <h3 id="highRiskCases">
+                        1
+                    </h3>
+
+                    <p>
+                        High Risk Cases
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DELAY ALERT -->
+            <div class="delay-alert-card">
+
+                <div class="delay-alert-icon">
+                    🚨
+                </div>
+
+                <div>
+
+                    <h2>
+                        Delay Detected
+                    </h2>
+
+                    <p>
+                        One land acquisition case has exceeded its
+                        expected processing time.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CASE DETAILS -->
+            <section class="delay-card">
+
+                <div class="delay-card-title">
+
+                    <span>
+                        📊
+                    </span>
+
+                    <h2>
+                        Delayed Case Analysis
+                    </h2>
+
+                </div>
+
+
+                <div class="delay-case">
+
+                    <!-- CASE HEADER -->
+                    <div class="delay-case-header">
+
+                        <div>
+                            <span class="delay-label">
+                                Survey Number
+                            </span>
+
+                            <h3 id="delaySurvey">
+                                SUR-1025
+                            </h3>
+                        </div>
+
+
+                        <span class="risk-badge high">
+                            HIGH RISK
+                        </span>
+
+                    </div>
+
+
+                    <!-- DETAILS -->
+                    <div class="delay-details-grid">
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                👨‍🌾 Landowner
+                            </span>
+
+                            <strong id="delayOwner">
+                                Rajesh Patil
+                            </strong>
+
+                        </div>
+
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                📐 Land Area
+                            </span>
+
+                            <strong id="delayArea">
+                                2.5 Acres
+                            </strong>
+
+                        </div>
+
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                ⏱️ Expected Duration
+                            </span>
+
+                            <strong id="expectedDuration">
+                                60 Days
+                            </strong>
+
+                        </div>
+
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                📅 Actual Duration
+                            </span>
+
+                            <strong id="actualDuration">
+                                78 Days
+                            </strong>
+
+                        </div>
+
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                ⚠️ Delay
+                            </span>
+
+                            <strong id="delayDays">
+                                18 Days
+                            </strong>
+
+                        </div>
+
+
+                        <div class="delay-detail-box">
+
+                            <span>
+                                📌 Current Stage
+                            </span>
+
+                            <strong id="delayStage">
+                                Verification
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROGRESS -->
+                    <div class="delay-progress-section">
+
+                        <div class="delay-progress-title">
+
+                            <strong>
+                                Acquisition Progress
+                            </strong>
+
+                            <span id="delayProgressText">
+                                57%
+                            </span>
+
+                        </div>
+
+                        <div class="delay-progress-bar">
+
+                            <div
+                                class="delay-progress-fill"
+                                id="delayProgressFill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REASON -->
+                    <div class="delay-reason">
+
+                        <div class="reason-icon">
+                            🔍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Possible Reason for Delay
+                            </h3>
+
+                            <p id="delayReason">
+                                Document verification is taking longer
+                                than the expected processing time.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECOMMENDATION -->
+                    <div class="delay-recommendation">
+
+                        <div class="recommendation-icon">
+                            💡
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Recommended Action
+                            </h3>
+
+                            <p id="delayRecommendation">
+                                Verify pending documents and notify the
+                                responsible authority to complete the
+                                verification process.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI PREDICTION -->
+            <section class="delay-card">
+
+                <div class="delay-card-title">
+
+                    <span>
+                        🤖
+                    </span>
+
+                    <h2>
+                        AI Delay Prediction
+                    </h2>
+
+                </div>
+
+
+                <div class="prediction-grid">
+
+                    <div class="prediction-box">
+
+                        <div class="prediction-icon">
+                            📈
+                        </div>
+
+                        <h3>
+                            Delay Risk
+                        </h3>
+
+                        <strong>
+                            High
+                        </strong>
+
+                        <p>
+                            The case has a high probability of
+                            further delay.
+                        </p>
+
+                    </div>
+
+
+                    <div class="prediction-box">
+
+                        <div class="prediction-icon">
+                            ⏳
+                        </div>
+
+                        <h3>
+                            Predicted Additional Delay
+                        </h3>
+
+                        <strong>
+                            7–12 Days
+                        </strong>
+
+                        <p>
+                            Estimated additional time if pending
+                            verification is not completed.
+                        </p>
+
+                    </div>
+
+
+                    <div class="prediction-box">
+
+                        <div class="prediction-icon">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Priority
+                        </h3>
+
+                        <strong>
+                            Immediate
+                        </strong>
+
+                        <p>
+                            This case should be reviewed on priority.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ALL CASES -->
+            <section class="delay-card">
+
+                <div class="delay-card-title">
+
+                    <span>
+                        📋
+                    </span>
+
+                    <h2>
+                        Acquisition Delay Status
+                    </h2>
+
+                </div>
+
+
+                <div class="delay-table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Survey No.</th>
+                                <th>Landowner</th>
+                                <th>Stage</th>
+                                <th>Expected</th>
+                                <th>Actual</th>
+                                <th>Delay</th>
+                                <th>Risk</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>SUR-1025</td>
+
+                                <td>Rajesh Patil</td>
+
+                                <td>
+                                    Verification
+                                </td>
+
+                                <td>
+                                    60 Days
+                                </td>
+
+                                <td>
+                                    78 Days
+                                </td>
+
+                                <td class="delay-text">
+                                    +18 Days
+                                </td>
+
+                                <td>
+                                    <span class="table-risk high">
+                                        High
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1042</td>
+
+                                <td>Sunil Patil</td>
+
+                                <td>
+                                    Verification
+                                </td>
+
+                                <td>
+                                    60 Days
+                                </td>
+
+                                <td>
+                                    55 Days
+                                </td>
+
+                                <td class="on-time">
+                                    On Time
+                                </td>
+
+                                <td>
+                                    <span class="table-risk low">
+                                        Low
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1088</td>
+
+                                <td>Mahesh Patil</td>
+
+                                <td>
+                                    Compensation
+                                </td>
+
+                                <td>
+                                    90 Days
+                                </td>
+
+                                <td>
+                                    82 Days
+                                </td>
+
+                                <td class="on-time">
+                                    On Time
+                                </td>
+
+                                <td>
+                                    <span class="table-risk low">
+                                        Low
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>SUR-1112</td>
+
+                                <td>Prakash More</td>
+
+                                <td>
+                                    Completed
+                                </td>
+
+                                <td>
+                                    120 Days
+                                </td>
+
+                                <td>
+                                    115 Days
+                                </td>
+
+                                <td class="on-time">
+                                    On Time
+                                </td>
+
+                                <td>
+                                    <span class="table-risk low">
+                                        Low
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMATION -->
+            <div class="delay-info">
+
+                <div class="delay-info-icon">
+                    ℹ️
+                </div>
+
+                <div>
+
+                    <h3>
+                        About Delay Detection
+                    </h3>
+
+                    <p>
+                        Bhoomi Trek compares the expected processing
+                        time with the actual acquisition progress.
+                        Delayed cases can be identified early so that
+                        responsible authorities can take corrective
+                        action.
+                    </p>
+
+                    <p>
+                        AI-based prediction can be connected with
+                        historical acquisition data in the future
+                        to predict possible delays.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+            <div class="delay-actions">
+
+                <a href="dashboard.html"
+                   class="back-btn">
+                    ← Back to Dashboard
+                </a>
+
+                <a href="track_acquisition.html"
+                   class="delay-next-btn">
+                    📈 Track Acquisition
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>
+                    🌱 BHOOMI TREK
+                </h3>
+
+                <p>
+                    Transparent and efficient land acquisition
+                    management system.
+                </p>
+            </div>
+
+            <div>
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="gis_map.html">
+                    GIS Map
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Bhoomi Trek | SIH 26016 Prototype
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

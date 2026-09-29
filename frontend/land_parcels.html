@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Land Parcels</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadLandParcels()">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 <span>BHOOMI TREK</span>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="location_search.html">
+                Search Location
+            </a>
+
+            <a href="land_information.html" class="active">
+                Land Information
+            </a>
+
+            <a href="track_acquisition.html">
+                Track Acquisition
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN SECTION ================= -->
+
+    <section class="parcel-page">
+
+        <div class="parcel-container">
+
+            <!-- PAGE HEADER -->
+
+            <div class="parcel-header">
+
+                <div class="parcel-icon">
+                    🏞️
+                </div>
+
+                <p class="parcel-small-title">
+                    BHOOMI TREK
+                </p>
+
+                <h1>
+                    Land Parcels
+                </h1>
+
+                <p>
+                    View land parcels available for
+                    acquisition in the selected location.
+                </p>
+
+            </div>
+
+
+            <!-- SELECTED LOCATION -->
+
+            <div class="selected-location-card">
+
+                <div>
+                    <span>🌍 State</span>
+                    <strong id="showState">-</strong>
+                </div>
+
+                <div>
+                    <span>🏙️ District</span>
+                    <strong id="showDistrict">-</strong>
+                </div>
+
+                <div>
+                    <span>📍 Taluka</span>
+                    <strong id="showTaluka">-</strong>
+                </div>
+
+                <div>
+                    <span>🏘️ Village</span>
+                    <strong id="showVillage">-</strong>
+                </div>
+
+                <div>
+                    <span>🏗️ Purpose</span>
+                    <strong id="showPurpose">-</strong>
+                </div>
+
+            </div>
+
+
+            <!-- PARCEL SUMMARY -->
+
+            <div class="parcel-summary">
+
+                <div class="summary-box">
+                    <span>📋</span>
+                    <div>
+                        <small>Total Parcels</small>
+                        <h2>4</h2>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <span>🌾</span>
+                    <div>
+                        <small>Total Area</small>
+                        <h2>10.5 Acres</h2>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <span>⏳</span>
+                    <div>
+                        <small>Under Acquisition</small>
+                        <h2>3</h2>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <span>✅</span>
+                    <div>
+                        <small>Completed</small>
+                        <h2>1</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- LAND PARCEL TABLE -->
+
+            <div class="parcel-card">
+
+                <div class="parcel-card-header">
+
+                    <div>
+                        <h2>
+                            📑 Land Parcel Records
+                        </h2>
+
+                        <p>
+                            Sample records for demonstration
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Survey No.</th>
+
+                                <th>Owner Name</th>
+
+                                <th>Village</th>
+
+                                <th>Area</th>
+
+                                <th>Land Type</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>SUR-1025</strong>
+                                </td>
+
+                                <td>
+                                    Rajesh Patil
+                                </td>
+
+                                <td>
+                                    Dhule
+                                </td>
+
+                                <td>
+                                    2.5 Acres
+                                </td>
+
+                                <td>
+                                    Agricultural
+                                </td>
+
+                                <td>
+                                    <span class="status progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="view-btn"
+                                        onclick="viewParcel('SUR-1025')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>SUR-1042</strong>
+                                </td>
+
+                                <td>
+                                    Sunil Patil
+                                </td>
+
+                                <td>
+                                    Dhule
+                                </td>
+
+                                <td>
+                                    3.0 Acres
+                                </td>
+
+                                <td>
+                                    Agricultural
+                                </td>
+
+                                <td>
+                                    <span class="status verification">
+                                        Verification
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="view-btn"
+                                        onclick="viewParcel('SUR-1042')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>SUR-1088</strong>
+                                </td>
+
+                                <td>
+                                    Mahesh Patil
+                                </td>
+
+                                <td>
+                                    Dhule
+                                </td>
+
+                                <td>
+                                    1.5 Acres
+                                </td>
+
+                                <td>
+                                    Residential
+                                </td>
+
+                                <td>
+                                    <span class="status compensation">
+                                        Compensation
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="view-btn"
+                                        onclick="viewParcel('SUR-1088')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>SUR-1112</strong>
+                                </td>
+
+                                <td>
+                                    Prakash More
+                                </td>
+
+                                <td>
+                                    Dhule
+                                </td>
+
+                                <td>
+                                    3.5 Acres
+                                </td>
+
+                                <td>
+                                    Agricultural
+                                </td>
+
+                                <td>
+                                    <span class="status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        class="view-btn"
+                                        onclick="viewParcel('SUR-1112')">
+                                        View
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEXT ACTIONS -->
+
+            <div class="parcel-actions">
+
+                <a href="location_search.html"
+                   class="back-btn">
+
+                    ← Change Location
+
+                </a>
+
+
+                <a href="land_information.html"
+                   class="parcel-next-btn">
+
+                    📋 View Land Information →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    🌱 BHOOMI TREK
+                </h3>
+
+                <p>
+                    Track Every Parcel. Every Stage.
+                    Every Decision.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="location_search.html">
+                    Search Location
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 support@bhoomitre​k.com
+                </p>
+
+                <p>
+                    📞 +91 XXXXX XXXXX
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 BHOOMI TREK |
+            Land Acquisition Management System
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

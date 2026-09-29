@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Profile & Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="profile-page">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">🌱</div>
+
+            <div>
+                <h2>BHOOMI <span>TREK</span></h2>
+                <p>Smart & Transparent Land Acquisition</p>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="profile.html" class="active">
+                Profile
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button class="login-btn"
+                onclick="showForm('login')">
+
+            👤 Login
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= PROFILE SECTION ================= -->
+
+    <section class="profile-section">
+
+        <div class="profile-container">
+
+
+            <!-- ================= HEADER ================= -->
+
+            <div class="profile-header">
+
+                <div class="profile-main-icon">
+                    👤
+                </div>
+
+                <p class="profile-small-title">
+                    BHOOMI TREK
+                </p>
+
+                <h1>
+                    Create Your Profile
+                </h1>
+
+                <p>
+                    Create an account to access land information
+                    and track land acquisition.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= TABS ================= -->
+
+            <div class="profile-tabs">
+
+                <button
+                    class="tab-btn active"
+                    onclick="showForm('register')">
+
+                    📝 Create Profile
+
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    onclick="showForm('login')">
+
+                    🔐 Login
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= REGISTER FORM ================= -->
+
+            <div id="registerForm" class="profile-form">
+
+                <h2>
+                    Create Your Account
+                </h2>
+
+                <p class="form-subtitle">
+                    Select your user type and enter your details.
+                </p>
+
+
+
+                <!-- USER TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        👤 User Type
+                    </label>
+
+                    <select id="userType"
+                            onchange="changeUserType()">
+
+                        <option value="citizen">
+                            👨‍🌾 Landowner / Citizen
+                        </option>
+
+                        <option value="officer">
+                            🏛️ Government Officer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ================= CITIZEN ================= -->
+
+                <div id="citizenFields">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            👤 Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="citizenName"
+                            placeholder="Enter your full name">
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                📱 Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="citizenMobile"
+                                placeholder="Enter mobile number">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                ✉ Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="citizenEmail"
+                                placeholder="Enter email address">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            📍 Address
+                        </label>
+
+                        <textarea
+                            id="citizenAddress"
+                            placeholder="Enter your address"
+                            rows="3"></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            🔒 Create Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="citizenPassword"
+                            placeholder="Create a password">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================= OFFICER ================= -->
+
+                <div id="officerFields"
+                     style="display:none;">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            👤 Officer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="officerName"
+                            placeholder="Enter officer name">
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                🏛️ Department
+                            </label>
+
+                            <input
+                                type="text"
+                                id="department"
+                                placeholder="Enter department">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                🏢 Office Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="officeName"
+                                placeholder="Enter office name">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                🪪 Employee ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="employeeId"
+                                placeholder="Enter employee ID">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                ✉ Official Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="officerEmail"
+                                placeholder="Enter official email">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            🔒 Create Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="officerPassword"
+                            placeholder="Create a password">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    class="profile-submit-btn"
+                    onclick="createProfile()">
+
+                    🚀 Create Profile
+
+                </button>
+
+
+                <p class="bottom-text">
+
+                    Already have an account?
+
+                    <span onclick="showForm('login')">
+                        Login here
+                    </span>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= LOGIN FORM ================= -->
+
+            <div id="loginForm"
+                 class="profile-form"
+                 style="display:none;">
+
+                <h2>
+                    Welcome Back 👋
+                </h2>
+
+                <p class="form-subtitle">
+                    Login to continue to Bhoomi Trek.
+                </p>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        ✉ Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your registered email">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        🔒 Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password">
+
+                </div>
+
+
+
+                <button
+                    class="profile-submit-btn"
+                    onclick="loginUser()">
+
+                    🔐 Login & Continue
+
+                </button>
+
+
+                <p class="bottom-text">
+
+                    Don't have an account?
+
+                    <span onclick="showForm('register')">
+                        Create Profile
+                    </span>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= INFORMATION BOX ================= -->
+
+            <div class="profile-info">
+
+                <div class="info-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Why create a profile?
+                    </h3>
+
+                    <p>
+                        Your profile allows Bhoomi Trek to provide
+                        personalized land information, acquisition
+                        tracking, compensation status and notifications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+        <div class="footer-logo">
+
+            <div class="logo-icon">
+                🌿
+            </div>
+
+            <div>
+
+                <h2>
+                    BHOOMI <span>TREK</span>
+                </h2>
+
+                <p>
+                    Smart & Transparent Land Acquisition
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="location_search.html">
+                Location Search
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Important Links
+            </h3>
+
+            <a href="index.html#track">
+                How It Works
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#contact">
+                Contact Us
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📞 +91 1234567890
+            </p>
+
+            <p>
+                ✉ info@bhoomitrek.gov.in
+            </p>
+
+            <p>
+                📍 India
+            </p>
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 Bhoomi Trek. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="api/api.js"></script>`r`n    <script src="script.js"></script>
+
+</body>
+
+</html>
+

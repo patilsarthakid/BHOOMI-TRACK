@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Objection & Grievance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadObjectionPage()">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 BHOOMI TREK
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="location_search.html">Search Location</a>
+        <a href="land_parcels.html">Land Parcels</a>
+        <a href="land_information.html">Land Information</a>
+        <a href="track_acquisition.html">Track Acquisition</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button class="login-btn"
+            onclick="window.location.href='profile.html'">
+        👤 Profile
+    </button>
+
+</header>
+
+
+<!-- ================= MAIN PAGE ================= -->
+
+<section class="objection-page">
+
+    <div class="objection-container">
+
+        <!-- HEADER -->
+
+        <div class="objection-header">
+
+            <div class="objection-icon">
+                📝
+            </div>
+
+            <p class="objection-small-title">
+                BHOOMI TREK
+            </p>
+
+            <h1>Objection & Grievance</h1>
+
+            <p>
+                Submit and track your objection regarding land acquisition
+            </p>
+
+        </div>
+
+
+        <!-- ================= LAND SUMMARY ================= -->
+
+        <div class="objection-summary">
+
+            <div>
+                <span>Survey Number</span>
+                <strong id="objectionSurvey">
+                    SUR-1025
+                </strong>
+            </div>
+
+            <div>
+                <span>Landowner</span>
+                <strong id="objectionOwner">
+                    Rajesh Patil
+                </strong>
+            </div>
+
+            <div>
+                <span>Location</span>
+                <strong id="objectionLocation">
+                    Laling, Dhule
+                </strong>
+            </div>
+
+            <div>
+                <span>Acquisition Status</span>
+                <strong class="objection-status">
+                    In Progress
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- ================= OBJECTION FORM ================= -->
+
+        <div class="objection-card">
+
+            <h2>📋 Submit Your Objection</h2>
+
+            <form onsubmit="submitObjection(event)">
+
+                <div class="objection-form-grid">
+
+                    <div class="form-group">
+
+                        <label for="objectionName">
+                            Landowner Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="objectionName"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="objectionMobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="objectionMobile"
+                            placeholder="Enter mobile number"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="objectionType">
+                            Objection Type
+                        </label>
+
+                        <select id="objectionType" required>
+
+                            <option value="">
+                                Select objection type
+                            </option>
+
+                            <option value="Compensation">
+                                💰 Compensation Amount
+                            </option>
+
+                            <option value="Land Area">
+                                📐 Incorrect Land Area
+                            </option>
+
+                            <option value="Ownership">
+                                👤 Ownership Issue
+                            </option>
+
+                            <option value="Documents">
+                                📄 Document Issue
+                            </option>
+
+                            <option value="Acquisition">
+                                🏗️ Acquisition Issue
+                            </option>
+
+                            <option value="Other">
+                                📌 Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="objectionDate">
+                            Objection Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="objectionDate"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="objectionDescription">
+                        Objection / Grievance Description
+                    </label>
+
+                    <textarea
+                        id="objectionDescription"
+                        rows="6"
+                        placeholder="Describe your objection or grievance in detail..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supportDocument">
+                        Supporting Document
+                    </label>
+
+                    <input
+                        type="file"
+                        id="supportDocument"
+                        accept=".pdf,.jpg,.jpeg,.png">
+
+                    <small>
+                        Upload PDF, JPG or PNG document.
+                    </small>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="objection-submit-btn">
+
+                    📝 Submit Objection
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- ================= GRIEVANCE STATUS ================= -->
+
+        <div class="objection-card">
+
+            <h2>📊 Grievance Status</h2>
+
+            <div class="grievance-status-box">
+
+                <div class="grievance-icon">
+                    🔔
+                </div>
+
+                <div>
+
+                    <span>Current Status</span>
+
+                    <h3 id="grievanceStatus">
+                        No Objection Submitted
+                    </h3>
+
+                    <p id="grievanceMessage">
+                        Submit an objection using the form above.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= IMPORTANT INFORMATION ================= -->
+
+        <div class="objection-info">
+
+            <div class="info-icon">
+                ℹ️
+            </div>
+
+            <div>
+
+                <h3>Important Information</h3>
+
+                <p>
+                    Please provide accurate information and relevant
+                    supporting documents. Your objection will be reviewed
+                    by the concerned authority.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACTION BUTTONS ================= -->
+
+        <div class="objection-actions">
+
+            <a href="compensation.html"
+               class="back-btn">
+                ← Compensation
+            </a>
+
+            <a href="approval.html"
+               class="objection-next-btn">
+                ✅ View Approval →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>🌱 BHOOMI TREK</h3>
+
+            <p>
+                Smart Land Acquisition Management Platform
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Bhoomi Trek | Smart Land Acquisition System
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

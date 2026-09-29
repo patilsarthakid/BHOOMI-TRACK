@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Track Acquisition</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadAcquisitionStatus()">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 BHOOMI TREK
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="location_search.html">Search Location</a>
+        <a href="land_parcels.html">Land Parcels</a>
+        <a href="land_information.html">Land Information</a>
+        <a href="track_acquisition.html" class="active">
+            Track Acquisition
+        </a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button class="login-btn"
+            onclick="window.location.href='profile.html'">
+        👤 Profile
+    </button>
+
+</header>
+
+
+<!-- ================= MAIN PAGE ================= -->
+
+<section class="tracking-page">
+
+    <div class="tracking-container">
+
+        <!-- HEADER -->
+
+        <div class="tracking-header">
+
+            <div class="tracking-icon">
+                📈
+            </div>
+
+            <p class="tracking-small-title">
+                BHOOMI TREK
+            </p>
+
+            <h1>Track Land Acquisition</h1>
+
+            <p>
+                Monitor the complete acquisition process and current status
+            </p>
+
+        </div>
+
+
+        <!-- ================= LAND SUMMARY ================= -->
+
+        <div class="tracking-summary">
+
+            <div class="tracking-summary-item">
+                <span>Survey Number</span>
+                <strong id="trackSurvey">
+                    SUR-1025
+                </strong>
+            </div>
+
+            <div class="tracking-summary-item">
+                <span>Landowner</span>
+                <strong id="trackOwner">
+                    Rajesh Patil
+                </strong>
+            </div>
+
+            <div class="tracking-summary-item">
+                <span>Location</span>
+                <strong id="trackLocation">
+                    Dhule, Maharashtra
+                </strong>
+            </div>
+
+            <div class="tracking-summary-item">
+                <span>Current Status</span>
+                <strong class="current-status" id="trackStatus">
+                    In Progress
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- ================= PROGRESS ================= -->
+
+        <div class="progress-card">
+
+            <h2>📊 Acquisition Progress</h2>
+
+            <div class="progress-bar-container">
+
+                <div class="progress-bar">
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+                </div>
+
+                <span id="progressText">
+                    57% Completed
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= TIMELINE ================= -->
+
+        <div class="timeline-card">
+
+            <h2>🕒 Acquisition Timeline</h2>
+
+            <div class="timeline">
+
+
+                <!-- STEP 1 -->
+
+                <div class="timeline-item completed-step">
+
+                    <div class="timeline-number">
+                        ✓
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Land Identification</h3>
+
+                        <p>
+                            Land parcel identified for government acquisition.
+                        </p>
+
+                        <span>
+                            📅 10 January 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 2 -->
+
+                <div class="timeline-item completed-step">
+
+                    <div class="timeline-number">
+                        ✓
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Acquisition Notification</h3>
+
+                        <p>
+                            Official acquisition notification was issued.
+                        </p>
+
+                        <span>
+                            📅 15 March 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 3 -->
+
+                <div class="timeline-item completed-step">
+
+                    <div class="timeline-number">
+                        ✓
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Document Verification</h3>
+
+                        <p>
+                            Land ownership and required documents were verified.
+                        </p>
+
+                        <span>
+                            📅 20 April 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 4 -->
+
+                <div class="timeline-item active-step">
+
+                    <div class="timeline-number">
+                        4
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Compensation Assessment</h3>
+
+                        <p>
+                            Compensation amount is being assessed by the authority.
+                        </p>
+
+                        <span>
+                            🔄 Currently in progress
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 5 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        5
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Objection / Grievance</h3>
+
+                        <p>
+                            Landowner can submit an objection or grievance if required.
+                        </p>
+
+                        <span>
+                            ⏳ Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 6 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        6
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Final Approval</h3>
+
+                        <p>
+                            Final acquisition approval will be issued by the authority.
+                        </p>
+
+                        <span>
+                            ⏳ Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 7 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        7
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Land Possession</h3>
+
+                        <p>
+                            Possession of the acquired land will be transferred.
+                        </p>
+
+                        <span>
+                            ⏳ Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 8 -->
+
+                <div class="timeline-item">
+
+                    <div class="timeline-number">
+                        8
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>Acquisition Completed</h3>
+
+                        <p>
+                            Complete acquisition process will be marked as finished.
+                        </p>
+
+                        <span>
+                            ⏳ Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DELAY ALERT ================= -->
+
+        <div class="delay-alert">
+
+            <div class="delay-alert-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <h3>Delay Monitoring</h3>
+
+                <p>
+                    The compensation assessment is taking longer than the
+                    expected processing time. The system will monitor the
+                    delay and notify the concerned authority.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACTION BUTTONS ================= -->
+
+        <div class="tracking-actions">
+
+            <a href="land_information.html"
+               class="back-btn">
+                ← Land Information
+            </a>
+
+            <a href="verification.html"
+               class="tracking-next-btn">
+                🔍 View Verification →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>🌱 BHOOMI TREK</h3>
+
+            <p>
+                Smart Land Acquisition Management Platform
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Bhoomi Trek | Smart Land Acquisition System
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

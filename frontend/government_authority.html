@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Government Authority - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadGovernmentAuthority()">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="government_authority.html" class="active">
+                Government Authority
+            </a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="authority-page">
+
+        <div class="authority-container">
+
+            <!-- HEADER -->
+
+            <div class="authority-header">
+
+                <div class="authority-icon">
+                    🏛️
+                </div>
+
+                <p class="authority-small-title">
+                    BHOOMI TREK
+                </p>
+
+                <h1>
+                    Government Authority
+                </h1>
+
+                <p>
+                    View the government department and authority
+                    responsible for the selected land acquisition.
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="authority-location-card">
+
+                <h2>📍 Selected Location</h2>
+
+                <div class="authority-location-grid">
+
+                    <div>
+                        <span>State</span>
+                        <strong id="authorityState">-</strong>
+                    </div>
+
+                    <div>
+                        <span>District</span>
+                        <strong id="authorityDistrict">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Taluka</span>
+                        <strong id="authorityTaluka">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Village</span>
+                        <strong id="authorityVillage">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PURPOSE -->
+
+            <div class="authority-purpose-card">
+
+                <div class="purpose-icon">
+                    🏗️
+                </div>
+
+                <div>
+
+                    <span>
+                        Acquisition Purpose
+                    </span>
+
+                    <h3 id="authorityPurpose">
+                        -
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTHORITY INFORMATION -->
+
+            <div class="authority-info-card">
+
+                <h2>
+                    🏛️ Responsible Government Authority
+                </h2>
+
+                <div class="authority-info-grid">
+
+                    <div class="authority-info-box">
+
+                        <div class="info-box-icon">
+                            🏢
+                        </div>
+
+                        <span>
+                            Department
+                        </span>
+
+                        <h3 id="department">
+                            District Collector Office
+                        </h3>
+
+                    </div>
+
+
+                    <div class="authority-info-box">
+
+                        <div class="info-box-icon">
+                            👨‍💼
+                        </div>
+
+                        <span>
+                            Responsible Authority
+                        </span>
+
+                        <h3 id="responsibleAuthority">
+                            District Collector
+                        </h3>
+
+                    </div>
+
+
+                    <div class="authority-info-box">
+
+                        <div class="info-box-icon">
+                            📋
+                        </div>
+
+                        <span>
+                            Acquisition Officer
+                        </span>
+
+                        <h3 id="acquisitionOfficer">
+                            Land Acquisition Officer
+                        </h3>
+
+                    </div>
+
+
+                    <div class="authority-info-box">
+
+                        <div class="info-box-icon">
+                            📍
+                        </div>
+
+                        <span>
+                            Office Location
+                        </span>
+
+                        <h3 id="officeLocation">
+                            District Collector Office
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESPONSIBILITIES -->
+
+            <div class="authority-responsibility-card">
+
+                <h2>
+                    📌 Authority Responsibilities
+                </h2>
+
+                <div class="responsibility-list">
+
+                    <div class="responsibility-item">
+                        <span>✓</span>
+                        <p>
+                            Land acquisition notification and processing
+                        </p>
+                    </div>
+
+                    <div class="responsibility-item">
+                        <span>✓</span>
+                        <p>
+                            Verification of land ownership and documents
+                        </p>
+                    </div>
+
+                    <div class="responsibility-item">
+                        <span>✓</span>
+                        <p>
+                            Assessment and processing of compensation
+                        </p>
+                    </div>
+
+                    <div class="responsibility-item">
+                        <span>✓</span>
+                        <p>
+                            Handling objections and grievances
+                        </p>
+                    </div>
+
+                    <div class="responsibility-item">
+                        <span>✓</span>
+                        <p>
+                            Final approval and land possession process
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="authority-contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <h3>
+                        Contact Information
+                    </h3>
+
+                    <p>
+                        Contact the responsible government office
+                        for land acquisition related queries.
+                    </p>
+
+                    <p>
+                        📞 Office Helpline:
+                        <strong>1800-123-4567</strong>
+                    </p>
+
+                    <p>
+                        ✉️ Email:
+                        <strong>landacquisition@gov.in</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="authority-actions">
+
+                <a href="location_search.html"
+                   class="back-btn">
+                    ← Back to Location Search
+                </a>
+
+                <a href="land_parcels.html"
+                   class="authority-next-btn">
+                    View Land Parcels →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Bhoomi Trek | Smart Land Acquisition Platform
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

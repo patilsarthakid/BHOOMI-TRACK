@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Final Approval - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadApproval()">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- ================= APPROVAL PAGE ================= -->
+
+    <main class="approval-page">
+
+        <div class="approval-container">
+
+            <!-- HEADER -->
+
+            <div class="approval-header">
+
+                <div class="approval-icon">
+                    ✅
+                </div>
+
+                <p class="approval-small-title">
+                    LAND ACQUISITION PROCESS
+                </p>
+
+                <h1>
+                    Final Approval
+                </h1>
+
+                <p>
+                    Review the final approval status of the selected
+                    land acquisition.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SUMMARY ================= -->
+
+            <div class="approval-summary">
+
+                <div class="approval-summary-item">
+
+                    <span>Survey Number</span>
+
+                    <strong id="approvalSurvey">
+                        SUR-1025
+                    </strong>
+
+                </div>
+
+
+                <div class="approval-summary-item">
+
+                    <span>Landowner</span>
+
+                    <strong id="approvalOwner">
+                        Rajesh Patil
+                    </strong>
+
+                </div>
+
+
+                <div class="approval-summary-item">
+
+                    <span>Location</span>
+
+                    <strong id="approvalLocation">
+                        Dhule
+                    </strong>
+
+                </div>
+
+
+                <div class="approval-summary-item">
+
+                    <span>Approval Status</span>
+
+                    <strong class="approval-status"
+                            id="approvalStatus">
+                        Pending
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= APPROVAL STATUS ================= -->
+
+            <div class="approval-card">
+
+                <h2>
+                    🏛️ Approval Status
+                </h2>
+
+                <div class="approval-status-box">
+
+                    <div class="approval-status-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <h3 id="approvalTitle">
+                            Final Approval Pending
+                        </h3>
+
+                        <p id="approvalMessage">
+                            The land acquisition proposal is currently
+                            under final approval.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= AUTHORITY ================= -->
+
+            <div class="approval-card">
+
+                <h2>
+                    🏛️ Approving Authority
+                </h2>
+
+                <div class="authority-grid">
+
+                    <div class="authority-box">
+
+                        <span>Department</span>
+
+                        <strong id="approvalDepartment">
+                            District Collector Office
+                        </strong>
+
+                    </div>
+
+
+                    <div class="authority-box">
+
+                        <span>Authority</span>
+
+                        <strong id="approvalAuthority">
+                            District Collector
+                        </strong>
+
+                    </div>
+
+
+                    <div class="authority-box">
+
+                        <span>Project</span>
+
+                        <strong id="approvalProject">
+                            Government Infrastructure Project
+                        </strong>
+
+                    </div>
+
+
+                    <div class="authority-box">
+
+                        <span>Approval Date</span>
+
+                        <strong id="approvalDate">
+                            Pending
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= APPROVAL PROGRESS ================= -->
+
+            <div class="approval-card">
+
+                <h2>
+                    📊 Approval Progress
+                </h2>
+
+                <div class="approval-progress">
+
+                    <div class="approval-progress-item completed">
+
+                        <div class="approval-progress-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>Proposal Submitted</strong>
+
+                            <p>
+                                Acquisition proposal submitted
+                                successfully.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="approval-progress-item completed">
+
+                        <div class="approval-progress-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>Document Verification</strong>
+
+                            <p>
+                                Required land documents verified.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="approval-progress-item completed">
+
+                        <div class="approval-progress-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>Compensation Assessment</strong>
+
+                            <p>
+                                Compensation amount has been assessed.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="approval-progress-item active">
+
+                        <div class="approval-progress-icon">
+                            4
+                        </div>
+
+                        <div>
+                            <strong>Final Government Approval</strong>
+
+                            <p>
+                                Proposal is currently awaiting
+                                final approval.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="approval-progress-item pending">
+
+                        <div class="approval-progress-icon">
+                            5
+                        </div>
+
+                        <div>
+                            <strong>Land Possession</strong>
+
+                            <p>
+                                Will begin after final approval.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= IMPORTANT INFORMATION ================= -->
+
+            <div class="approval-notice">
+
+                <div class="notice-icon">
+                    ℹ️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Important Information
+                    </h3>
+
+                    <p>
+                        Final approval is subject to verification of
+                        documents, government rules and approval by the
+                        competent authority.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ACTIONS ================= -->
+
+            <div class="approval-actions">
+
+                <a href="objection.html"
+                   class="back-btn">
+                    ← Back to Objection
+                </a>
+
+                <a href="possession.html"
+                   class="approval-next-btn">
+                    View Land Possession →
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                🌱 BHOOMI TREK
+            </h2>
+
+            <p>
+                Transparent and efficient land acquisition
+                management system.
+            </p>
+
+            <p>
+                © 2026 Bhoomi Trek. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

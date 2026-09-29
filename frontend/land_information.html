@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Land Information</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadLandInformation()">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 BHOOMI TREK
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="location_search.html">Search Location</a>
+        <a href="land_parcels.html" class="active">Land Parcels</a>
+        <a href="track_acquisition.html">Track Acquisition</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button class="login-btn"
+            onclick="window.location.href='profile.html'">
+        👤 Profile
+    </button>
+
+</header>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="land-info-page">
+
+    <div class="land-info-container">
+
+        <div class="land-info-header">
+
+            <div class="land-info-icon">
+                🌾
+            </div>
+
+            <p class="land-info-small-title">
+                BHOOMI TREK
+            </p>
+
+            <h1>Land Information</h1>
+
+            <p>
+                View complete information about the selected land parcel
+            </p>
+
+        </div>
+
+
+        <!-- ================= SELECTED PARCEL ================= -->
+
+        <div class="land-selected-card">
+
+            <div>
+                <span>Selected Survey Number</span>
+                <h2 id="surveyNumber">SUR-1025</h2>
+            </div>
+
+            <div class="land-status">
+                <span>Status</span>
+                <strong id="landStatus">In Progress</strong>
+            </div>
+
+        </div>
+
+
+        <!-- ================= LAND DETAILS ================= -->
+
+        <div class="land-details-card">
+
+            <h2>📋 Land Details</h2>
+
+            <div class="land-details-grid">
+
+                <div class="detail-box">
+                    <span>👤 Landowner</span>
+                    <strong id="landowner">Rajesh Patil</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>📍 State</span>
+                    <strong id="state">Maharashtra</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>🏙️ District</span>
+                    <strong id="district">Dhule</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>🏘️ Taluka</span>
+                    <strong id="taluka">Dhule</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>🏡 Village</span>
+                    <strong id="village">Laling</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>📐 Land Area</span>
+                    <strong id="area">2.5 Acres</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>🌱 Land Type</span>
+                    <strong id="landType">Agricultural</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>🏗️ Acquisition Purpose</span>
+                    <strong id="purpose">
+                        Highway / Road
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= OWNERSHIP ================= -->
+
+        <div class="land-details-card">
+
+            <h2>📑 Ownership Information</h2>
+
+            <div class="land-details-grid">
+
+                <div class="detail-box">
+                    <span>Survey Number</span>
+                    <strong id="surveyNumber2">
+                        SUR-1025
+                    </strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Ownership Type</span>
+                    <strong>Private Land</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Ownership Verified</span>
+                    <strong>✅ Yes</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Land Record</span>
+                    <strong>Available</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACQUISITION INFORMATION ================= -->
+
+        <div class="land-details-card">
+
+            <h2>🏗️ Acquisition Information</h2>
+
+            <div class="land-details-grid">
+
+                <div class="detail-box">
+                    <span>Acquisition Authority</span>
+                    <strong>
+                        National Highway Authority
+                    </strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Project Name</span>
+                    <strong>
+                        Highway Development Project
+                    </strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Notification Date</span>
+                    <strong>15 March 2026</strong>
+                </div>
+
+                <div class="detail-box">
+                    <span>Current Stage</span>
+                    <strong id="currentStage">
+                        Verification
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACTION BUTTONS ================= -->
+
+        <div class="land-info-actions">
+
+            <a href="land_parcels.html" class="back-btn">
+                ← Back to Land Parcels
+            </a>
+
+            <button
+                class="land-next-btn"
+                onclick="goToTrackAcquisition()">
+                📈 Track Acquisition →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>🌱 BHOOMI TREK</h3>
+            <p>
+                Smart Land Acquisition Management Platform
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Bhoomi Trek | Smart Land Acquisition System
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

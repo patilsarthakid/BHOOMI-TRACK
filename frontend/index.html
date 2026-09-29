@@ -1,1 +1,744 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bhoomi Track</title><link rel="stylesheet" href="/css/style.css"></head><body><div id="app"></div><script src="/js/app.js"></script></body></html>
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Land Acquisition Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">🌱</div>
+
+            <div>
+                <h2>BHOOMI <span>TREK</span></h2>
+                <p>Smart & Transparent Land Acquisition</p>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html" class="active">
+                Home
+            </a>
+
+            <!-- Profile/Login is required before accessing land information -->
+            <a href="profile.html">
+                Land Information
+            </a>
+
+            <a href="profile.html">
+                Track Acquisition
+            </a>
+
+            <a href="profile.html">
+                Dashboard
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+
+            👤 Login
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <p class="welcome">
+                    WELCOME TO
+                </p>
+
+
+                <h1>
+                    <span>BHOOMI</span> TREK
+                </h1>
+
+
+                <h2>
+                    Smart Land Acquisition Management System
+                </h2>
+
+
+                <p class="description">
+
+                    Track land acquisition from land identification
+                    to final possession through one unified digital
+                    platform.
+
+                </p>
+
+
+                <!-- HERO BUTTONS -->
+
+                <div class="hero-buttons">
+
+                    <!-- User must login/create profile first -->
+
+                    <a href="profile.html"
+                       class="primary-btn">
+
+                        📋 Add Land Information
+
+                    </a>
+
+
+                    <a href="profile.html"
+                       class="secondary-btn">
+
+                        📈 Track Status
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="statistics">
+
+
+                <div class="stat">
+
+                    <div class="stat-icon green">
+                        🏛️
+                    </div>
+
+                    <h4>
+                        Total Projects
+                    </h4>
+
+                    <h2>
+                        25
+                    </h2>
+
+                    <p>
+                        Active Projects
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <div class="stat-icon blue">
+                        📄
+                    </div>
+
+                    <h4>
+                        Land Parcels
+                    </h4>
+
+                    <h2>
+                        1,240
+                    </h2>
+
+                    <p>
+                        Total Parcels
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <div class="stat-icon orange">
+                        ◷
+                    </div>
+
+                    <h4>
+                        In Progress
+                    </h4>
+
+                    <h2>
+                        730
+                    </h2>
+
+                    <p>
+                        Under Process
+                    </p>
+
+                </div>
+
+
+
+                <div class="stat">
+
+                    <div class="stat-icon light-green">
+                        ✓
+                    </div>
+
+                    <h4>
+                        Completed
+                    </h4>
+
+                    <h2>
+                        510
+                    </h2>
+
+                    <p>
+                        Completed Cases
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <div class="search-icon">
+            🔍
+        </div>
+
+
+        <div class="search-title">
+
+            <h2>
+                Search Land Information
+            </h2>
+
+            <p>
+                Search by Survey Number, Owner Name or Project
+            </p>
+
+        </div>
+
+
+        <select id="searchType">
+
+            <option value="survey">
+                Survey Number
+            </option>
+
+            <option value="owner">
+                Owner Name
+            </option>
+
+            <option value="project">
+                Project Name
+            </option>
+
+        </select>
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter Survey Number..."
+        >
+
+
+        <button onclick="searchLand()">
+
+            🔍 Search
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= WORKFLOW ================= -->
+
+    <section class="workflow" id="track">
+
+        <h2>
+            HOW <span>BHOOMI TREK</span> WORKS
+        </h2>
+
+        <div class="underline"></div>
+
+
+        <div class="steps">
+
+
+            <!-- STEP 1 -->
+
+            <div class="step">
+
+                <div class="step-icon">
+                    📍
+                </div>
+
+                <h3>
+                    1. IDENTIFY
+                </h3>
+
+                <p>
+                    Land identification<br>
+                    and selection
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="step">
+
+                <div class="step-icon blue-icon">
+                    📄
+                </div>
+
+                <h3>
+                    2. VERIFY
+                </h3>
+
+                <p>
+                    Land verification<br>
+                    and validation
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="step">
+
+                <div class="step-icon orange-icon">
+                    ₹
+                </div>
+
+                <h3>
+                    3. COMPENSATION
+                </h3>
+
+                <p>
+                    Compensation calculation<br>
+                    and approval
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 4 -->
+
+            <div class="step">
+
+                <div class="step-icon purple-icon">
+                    ⚖
+                </div>
+
+                <h3>
+                    4. OBJECTION
+                </h3>
+
+                <p>
+                    Handle objections<br>
+                    and claims
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 5 -->
+
+            <div class="step">
+
+                <div class="step-icon yellow-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    5. APPROVAL
+                </h3>
+
+                <p>
+                    Final approval<br>
+                    and notification
+                </p>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+
+            <!-- STEP 6 -->
+
+            <div class="step">
+
+                <div class="step-icon">
+                    🏗
+                </div>
+
+                <h3>
+                    6. POSSESSION
+                </h3>
+
+                <p>
+                    Land possession<br>
+                    and project start
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features" id="land">
+
+
+        <!-- LAND INFORMATION -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon green-bg">
+                ☷
+            </div>
+
+            <h3>
+                Land Information
+            </h3>
+
+            <p>
+                Add and view land details,
+                ownership, documents and location.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+
+        <!-- TRACK ACQUISITION -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon blue-bg">
+                ⟳
+            </div>
+
+            <h3>
+                Track Acquisition
+            </h3>
+
+            <p>
+                Track the progress of land acquisition
+                from start to completion.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+
+        <!-- GIS MAP -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon orange-bg">
+                🗺
+            </div>
+
+            <h3>
+                GIS Map View
+            </h3>
+
+            <p>
+                View land parcels and acquisition
+                status on an interactive map.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+
+        <!-- COMPENSATION -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon purple-bg">
+                ₹
+            </div>
+
+            <h3>
+                Compensation
+            </h3>
+
+            <p>
+                Track compensation process
+                and payment status.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+
+        <!-- DELAY DETECTION -->
+
+        <div class="feature-card">
+
+            <div class="feature-icon red-bg">
+                ⚠
+            </div>
+
+            <h3>
+                Delay Detection
+            </h3>
+
+            <p>
+                Identify delayed cases and
+                get alerts for action.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+
+        <!-- REPORTS -->
+
+        <div class="feature-card" id="dashboard">
+
+            <div class="feature-icon cyan-bg">
+                📈
+            </div>
+
+            <h3>
+                Reports & Analytics
+            </h3>
+
+            <p>
+                View analytics and download
+                detailed reports.
+            </p>
+
+            <button onclick="window.location.href='profile.html'">
+                View More
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contact">
+
+
+        <div class="footer-logo">
+
+            <div class="logo-icon">
+                🌿
+            </div>
+
+            <div>
+
+                <h2>
+                    BHOOMI <span>TREK</span>
+                </h2>
+
+                <p>
+                    Smart & Transparent Land Acquisition
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="profile.html">
+                Land Information
+            </a>
+
+            <a href="profile.html">
+                Track Acquisition
+            </a>
+
+            <a href="profile.html">
+                Dashboard
+            </a>
+
+        </div>
+
+
+
+        <!-- IMPORTANT LINKS -->
+
+        <div class="footer-column" id="about">
+
+            <h3>
+                Important Links
+            </h3>
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#track">
+                How It Works
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#contact">
+                Contact Us
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contact Us
+            </h3>
+
+            <p>
+                📞 +91 1234567890
+            </p>
+
+            <p>
+                ✉ info@bhoomitrek.gov.in
+            </p>
+
+            <p>
+                📍 India
+            </p>
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 Bhoomi Trek. All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Compensation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadCompensation()">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 BHOOMI TREK
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="location_search.html">Search Location</a>
+        <a href="land_parcels.html">Land Parcels</a>
+        <a href="land_information.html">Land Information</a>
+        <a href="track_acquisition.html">Track Acquisition</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button class="login-btn"
+            onclick="window.location.href='profile.html'">
+        👤 Profile
+    </button>
+
+</header>
+
+
+<!-- ================= MAIN PAGE ================= -->
+
+<section class="compensation-page">
+
+    <div class="compensation-container">
+
+        <!-- HEADER -->
+
+        <div class="compensation-header">
+
+            <div class="compensation-icon">
+                💰
+            </div>
+
+            <p class="compensation-small-title">
+                BHOOMI TREK
+            </p>
+
+            <h1>Land Compensation</h1>
+
+            <p>
+                View compensation details and payment status
+            </p>
+
+        </div>
+
+
+        <!-- ================= LAND SUMMARY ================= -->
+
+        <div class="compensation-summary">
+
+            <div>
+                <span>Survey Number</span>
+                <strong id="compSurvey">
+                    SUR-1025
+                </strong>
+            </div>
+
+            <div>
+                <span>Landowner</span>
+                <strong id="compOwner">
+                    Rajesh Patil
+                </strong>
+            </div>
+
+            <div>
+                <span>Land Area</span>
+                <strong id="compArea">
+                    2.5 Acres
+                </strong>
+            </div>
+
+            <div>
+                <span>Payment Status</span>
+                <strong class="payment-status">
+                    Processing
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- ================= COMPENSATION BREAKDOWN ================= -->
+
+        <div class="compensation-card">
+
+            <h2>💵 Compensation Breakdown</h2>
+
+            <div class="compensation-table">
+
+                <div class="comp-row">
+
+                    <span>Estimated Land Value</span>
+
+                    <strong>
+                        ₹ 12,50,000
+                    </strong>
+
+                </div>
+
+
+                <div class="comp-row">
+
+                    <span>Additional Compensation</span>
+
+                    <strong>
+                        ₹ 3,75,000
+                    </strong>
+
+                </div>
+
+
+                <div class="comp-row">
+
+                    <span>Crop / Property Compensation</span>
+
+                    <strong>
+                        ₹ 1,25,000
+                    </strong>
+
+                </div>
+
+
+                <div class="comp-row">
+
+                    <span>Other Benefits</span>
+
+                    <strong>
+                        ₹ 50,000
+                    </strong>
+
+                </div>
+
+
+                <div class="comp-row total-row">
+
+                    <span>Total Estimated Compensation</span>
+
+                    <strong>
+                        ₹ 18,00,000
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= PAYMENT INFORMATION ================= -->
+
+        <div class="compensation-card">
+
+            <h2>🏦 Payment Information</h2>
+
+            <div class="payment-grid">
+
+                <div class="payment-box">
+
+                    <span>Compensation Status</span>
+
+                    <strong>
+                        🔄 Processing
+                    </strong>
+
+                </div>
+
+                <div class="payment-box">
+
+                    <span>Approval Status</span>
+
+                    <strong>
+                        ⏳ Pending
+                    </strong>
+
+                </div>
+
+                <div class="payment-box">
+
+                    <span>Expected Payment</span>
+
+                    <strong>
+                        After Final Approval
+                    </strong>
+
+                </div>
+
+                <div class="payment-box">
+
+                    <span>Payment Mode</span>
+
+                    <strong>
+                        Direct Bank Transfer
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= BENEFITS ================= -->
+
+        <div class="compensation-card">
+
+            <h2>🎁 Additional Benefits</h2>
+
+            <div class="benefits-grid">
+
+                <div class="benefit-box">
+
+                    <div class="benefit-icon">
+                        🏠
+                    </div>
+
+                    <div>
+                        <h3>Rehabilitation Support</h3>
+
+                        <p>
+                            Eligible landowners may receive
+                            rehabilitation assistance.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-box">
+
+                    <div class="benefit-icon">
+                        🌾
+                    </div>
+
+                    <div>
+                        <h3>Crop Compensation</h3>
+
+                        <p>
+                            Compensation may be provided for
+                            eligible standing crops.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-box">
+
+                    <div class="benefit-icon">
+                        💵
+                    </div>
+
+                    <div>
+                        <h3>Additional Benefits</h3>
+
+                        <p>
+                            Additional eligible benefits are
+                            included in the assessment.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit-box">
+
+                    <div class="benefit-icon">
+                        📄
+                    </div>
+
+                    <div>
+                        <h3>Payment Receipt</h3>
+
+                        <p>
+                            Payment receipt will be available
+                            after successful payment.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NOTICE ================= -->
+
+        <div class="compensation-notice">
+
+            <div class="notice-icon">
+                ℹ️
+            </div>
+
+            <div>
+
+                <h3>Compensation Information</h3>
+
+                <p>
+                    The amount displayed is a prototype estimate
+                    for demonstration. Actual compensation will
+                    be calculated and approved by the concerned
+                    government authority according to applicable
+                    rules.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACTION BUTTONS ================= -->
+
+        <div class="compensation-actions">
+
+            <a href="verification.html"
+               class="back-btn">
+                ← Verification
+            </a>
+
+            <a href="objection.html"
+               class="compensation-next-btn">
+                📝 Submit Objection →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>🌱 BHOOMI TREK</h3>
+
+            <p>
+                Smart Land Acquisition Management Platform
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Bhoomi Trek | Smart Land Acquisition System
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

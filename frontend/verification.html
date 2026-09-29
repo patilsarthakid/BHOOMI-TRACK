@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Verification</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadVerification()">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌱 BHOOMI TREK
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="location_search.html">Search Location</a>
+        <a href="land_parcels.html">Land Parcels</a>
+        <a href="land_information.html">Land Information</a>
+        <a href="track_acquisition.html">Track Acquisition</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button class="login-btn"
+            onclick="window.location.href='profile.html'">
+        👤 Profile
+    </button>
+
+</header>
+
+
+<!-- ================= MAIN PAGE ================= -->
+
+<section class="verification-page">
+
+    <div class="verification-container">
+
+        <!-- HEADER -->
+
+        <div class="verification-header">
+
+            <div class="verification-icon">
+                🔍
+            </div>
+
+            <p class="verification-small-title">
+                BHOOMI TREK
+            </p>
+
+            <h1>Land Verification</h1>
+
+            <p>
+                Verify ownership, documents and land records
+            </p>
+
+        </div>
+
+
+        <!-- ================= LAND SUMMARY ================= -->
+
+        <div class="verification-summary">
+
+            <div>
+                <span>Survey Number</span>
+                <strong id="verificationSurvey">
+                    SUR-1025
+                </strong>
+            </div>
+
+            <div>
+                <span>Landowner</span>
+                <strong id="verificationOwner">
+                    Rajesh Patil
+                </strong>
+            </div>
+
+            <div>
+                <span>Location</span>
+                <strong id="verificationLocation">
+                    Laling, Dhule
+                </strong>
+            </div>
+
+            <div>
+                <span>Verification Status</span>
+                <strong class="verification-status"
+                        id="verificationStatus">
+                    In Progress
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- ================= VERIFICATION CHECKLIST ================= -->
+
+        <div class="verification-card">
+
+            <h2>📋 Verification Checklist</h2>
+
+            <!-- OWNERSHIP -->
+
+            <div class="verification-item">
+
+                <div class="verification-item-icon">
+                    👤
+                </div>
+
+                <div class="verification-item-content">
+
+                    <h3>Ownership Verification</h3>
+
+                    <p>
+                        Landowner details are checked with
+                        the available land records.
+                    </p>
+
+                </div>
+
+                <div class="check-status">
+                    <span>✓ Verified</span>
+                </div>
+
+            </div>
+
+
+            <!-- LAND RECORD -->
+
+            <div class="verification-item">
+
+                <div class="verification-item-icon">
+                    📑
+                </div>
+
+                <div class="verification-item-content">
+
+                    <h3>Land Record Verification</h3>
+
+                    <p>
+                        Survey number and land area are
+                        verified with official records.
+                    </p>
+
+                </div>
+
+                <div class="check-status">
+                    <span>✓ Verified</span>
+                </div>
+
+            </div>
+
+
+            <!-- DOCUMENT -->
+
+            <div class="verification-item">
+
+                <div class="verification-item-icon">
+                    📄
+                </div>
+
+                <div class="verification-item-content">
+
+                    <h3>Document Verification</h3>
+
+                    <p>
+                        Required land ownership documents
+                        are checked by the authority.
+                    </p>
+
+                </div>
+
+                <div class="check-status pending-status">
+                    <span>⏳ Pending</span>
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="verification-item">
+
+                <div class="verification-item-icon">
+                    📍
+                </div>
+
+                <div class="verification-item-content">
+
+                    <h3>Location Verification</h3>
+
+                    <p>
+                        Village, taluka and district information
+                        are verified.
+                    </p>
+
+                </div>
+
+                <div class="check-status">
+                    <span>✓ Verified</span>
+                </div>
+
+            </div>
+
+
+            <!-- AUTHORITY -->
+
+            <div class="verification-item">
+
+                <div class="verification-item-icon">
+                    🏛️
+                </div>
+
+                <div class="verification-item-content">
+
+                    <h3>Government Authority Verification</h3>
+
+                    <p>
+                        Acquisition authority and project
+                        information are verified.
+                    </p>
+
+                </div>
+
+                <div class="check-status">
+                    <span>✓ Verified</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= DOCUMENTS ================= -->
+
+        <div class="verification-card">
+
+            <h2>📂 Required Documents</h2>
+
+            <div class="document-list">
+
+                <div class="document-box">
+                    <span>📄</span>
+                    <div>
+                        <strong>Land Ownership Record</strong>
+                        <small>Verified</small>
+                    </div>
+                </div>
+
+                <div class="document-box">
+                    <span>📄</span>
+                    <div>
+                        <strong>Survey / Land Record</strong>
+                        <small>Verified</small>
+                    </div>
+                </div>
+
+                <div class="document-box">
+                    <span>📄</span>
+                    <div>
+                        <strong>Identity Proof</strong>
+                        <small>Pending</small>
+                    </div>
+                </div>
+
+                <div class="document-box">
+                    <span>📄</span>
+                    <div>
+                        <strong>Acquisition Notice</strong>
+                        <small>Available</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= VERIFICATION MESSAGE ================= -->
+
+        <div class="verification-message">
+
+            <div class="message-icon">
+                ⚠️
+            </div>
+
+            <div>
+
+                <h3>Verification In Progress</h3>
+
+                <p>
+                    Some documents are still pending verification.
+                    The compensation process can continue after
+                    successful verification.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ACTION BUTTONS ================= -->
+
+        <div class="verification-actions">
+
+            <a href="track_acquisition.html"
+               class="back-btn">
+                ← Track Acquisition
+            </a>
+
+            <a href="compensation.html"
+               class="verification-next-btn">
+                💰 View Compensation →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>🌱 BHOOMI TREK</h3>
+
+            <p>
+                Smart Land Acquisition Management Platform
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_parcels.html">Land Parcels</a>
+            <a href="dashboard.html">Dashboard</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Bhoomi Trek | Smart Land Acquisition System
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

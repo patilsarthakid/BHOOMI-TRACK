@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bhoomi Trek - Search by Location</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body onload="checkLogin()">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 <span>BHOOMI TREK</span>
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="location_search.html"
+               class="active">
+                Search Location
+            </a>
+
+            <a href="land_information.html">
+                Land Information
+            </a>
+
+            <a href="track_acquisition.html">
+                Track Acquisition
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+
+            👤 Profile
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= LOCATION SEARCH ================= -->
+
+    <section class="location-page">
+
+        <div class="location-container">
+
+
+            <!-- ================= HEADER ================= -->
+
+            <div class="location-header">
+
+                <div class="location-icon">
+                    🗺️
+                </div>
+
+                <p class="location-small-title">
+                    BHOOMI TREK
+                </p>
+
+                <h1>
+                    Search Land by Location
+                </h1>
+
+                <p>
+                    Select the location and acquisition purpose
+                    to find land acquisition information.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= SEARCH CARD ================= -->
+
+            <div class="location-card">
+
+                <h2>
+                    📍 Select Location
+                </h2>
+
+                <p class="card-description">
+                    Select the land location step-by-step.
+                </p>
+
+
+                <div class="location-form">
+
+
+                    <!-- ================= STATE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="state">
+                            🌍 State
+                        </label>
+
+                        <select id="state"
+                                onchange="loadDistricts()">
+
+                            <option value="">
+                                Select State
+                            </option>
+
+                            <option value="Maharashtra">
+                                Maharashtra
+                            </option>
+
+                            <option value="Gujarat">
+                                Gujarat
+                            </option>
+
+                            <option value="Karnataka">
+                                Karnataka
+                            </option>
+
+                            <option value="Madhya Pradesh">
+                                Madhya Pradesh
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ================= DISTRICT ================= -->
+
+                    <div class="form-group">
+
+                        <label for="district">
+                            🏙️ District
+                        </label>
+
+                        <select id="district"
+                                onchange="loadTalukas()">
+
+                            <option value="">
+                                Select District
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ================= TALUKA ================= -->
+
+                    <div class="form-group">
+
+                        <label for="taluka">
+                            📍 Taluka
+                        </label>
+
+                        <select id="taluka"
+                                onchange="loadVillages()">
+
+                            <option value="">
+                                Select Taluka
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ================= VILLAGE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="village">
+                            🏘️ Village
+                        </label>
+
+                        <select id="village">
+
+                            <option value="">
+                                Select Village
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ================= ACQUISITION PURPOSE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="purpose">
+                            🏗️ Acquisition Purpose
+                        </label>
+
+                        <select id="purpose">
+
+                            <option value="">
+                                Select Acquisition Purpose
+                            </option>
+
+                            <option value="Highway / Road">
+                                🛣️ Highway / Road
+                            </option>
+
+                            <option value="Railway">
+                                🚆 Railway
+                            </option>
+
+                            <option value="Dam / Irrigation">
+                                💧 Dam / Irrigation
+                            </option>
+
+                            <option value="Government Infrastructure">
+                                🏗️ Government Infrastructure
+                            </option>
+
+                            <option value="Industrial Project">
+                                🏭 Industrial Project
+                            </option>
+
+                            <option value="Government Building">
+                                🏢 Government Building
+                            </option>
+
+                            <option value="Hospital / Healthcare">
+                                🏥 Hospital / Healthcare
+                            </option>
+
+                            <option value="School / Education">
+                                🏫 School / Education
+                            </option>
+
+                            <option value="Airport">
+                                ✈️ Airport
+                            </option>
+
+                            <option value="Power / Electricity">
+                                ⚡ Power / Electricity
+                            </option>
+
+                            <option value="Water Supply">
+                                🌊 Water Supply
+                            </option>
+
+                            <option value="Housing / Urban Development">
+                                🏘️ Housing / Urban Development
+                            </option>
+
+                            <option value="Environmental / Public Utility">
+                                🌳 Environmental / Public Utility
+                            </option>
+
+                            <option value="Other Government Purpose">
+                                🏛️ Other Government Purpose
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- ================= SEARCH BUTTON ================= -->
+
+                    <button type="button"
+                            class="location-search-btn"
+                            onclick="searchLocation()">
+
+                        🔍 Search Location
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 THREE INFORMATION CARDS
+            ================================================== -->
+
+            <div class="location-info-grid">
+
+
+                <!-- ================= LAND PARCELS ================= -->
+
+                <div class="location-info-card">
+
+                    <div class="info-icon">
+                        🏞️
+                    </div>
+
+                    <h3>
+                        Land Parcels
+                    </h3>
+
+                    <p>
+                        View available land parcels
+                        based on the selected location.
+                    </p>
+
+
+                    <a href="land_parcels.html"
+                       class="info-card-btn">
+
+                        🏞️ View Land Parcels
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= GOVERNMENT AUTHORITY ================= -->
+
+                <div class="location-info-card">
+
+                    <div class="info-icon">
+                        🏛️
+                    </div>
+
+                    <h3>
+                        Government Authority
+                    </h3>
+
+                    <p>
+                        Find the government department
+                        responsible for the acquisition.
+                    </p>
+
+
+                    <a href="government_authority.html"
+                       class="info-card-btn">
+
+                        🏛️ View Government Authority
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- ================= GIS MAP ================= -->
+
+                <div class="location-info-card">
+
+                    <div class="info-icon">
+                        🗺️
+                    </div>
+
+                    <h3>
+                        GIS Map
+                    </h3>
+
+                    <p>
+                        Visualize land parcels and
+                        acquisition areas on a map.
+                    </p>
+
+
+                    <a href="gis_map.html"
+                       class="info-card-btn">
+
+                        🗺️ View GIS Map
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================= BACK BUTTON ================= -->
+
+            <div class="back-section">
+
+                <a href="profile.html"
+                   class="back-btn">
+
+                    ← Back to Profile
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <!-- ================= ABOUT ================= -->
+
+            <div>
+
+                <h3>
+                    🌱 BHOOMI TREK
+                </h3>
+
+                <p>
+                    Track Every Parcel. Every Stage.
+                    Every Decision.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= QUICK LINKS ================= -->
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="location_search.html">
+                    Search Location
+                </a>
+
+                <a href="government_authority.html">
+                    Government Authority
+                </a>
+
+                <a href="land_parcels.html">
+                    Land Parcels
+                </a>
+
+                <a href="gis_map.html">
+                    GIS Map
+                </a>
+
+            </div>
+
+
+
+            <!-- ================= CONTACT ================= -->
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📧 support@bhoomitre​k.com
+                </p>
+
+                <p>
+                    📞 +91 XXXXX XXXXX
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026 BHOOMI TREK |
+            Land Acquisition Management System
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

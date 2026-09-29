@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications - Bhoomi Trek</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadNotifications()">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            🌱 BHOOMI TREK
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="location_search.html">Search Location</a>
+            <a href="land_information.html">Land Information</a>
+            <a href="track_acquisition.html">Track Acquisition</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+        <button class="login-btn"
+                onclick="window.location.href='profile.html'">
+            👤 Profile
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="notification-page">
+
+        <div class="notification-container">
+
+            <!-- HEADER -->
+            <div class="notification-header">
+
+                <div class="notification-icon">
+                    🔔
+                </div>
+
+                <p class="notification-small-title">
+                    UPDATES & ALERTS
+                </p>
+
+                <h1>
+                    Notifications & Alerts
+                </h1>
+
+                <p>
+                    Stay updated about your land acquisition process.
+                </p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="notification-location">
+
+                <div>
+                    <strong>📍 Current Location</strong>
+
+                    <p id="notificationLocation">
+                        Loading...
+                    </p>
+                </div>
+
+                <div>
+                    <strong>🏗️ Acquisition Purpose</strong>
+
+                    <p id="notificationPurpose">
+                        Loading...
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+            <div class="notification-summary">
+
+                <div class="notification-stat">
+
+                    <span class="notification-stat-icon">
+                        🔔
+                    </span>
+
+                    <h3 id="totalNotifications">
+                        5
+                    </h3>
+
+                    <p>
+                        Total Notifications
+                    </p>
+
+                </div>
+
+
+                <div class="notification-stat">
+
+                    <span class="notification-stat-icon">
+                        🔴
+                    </span>
+
+                    <h3 id="unreadNotifications">
+                        2
+                    </h3>
+
+                    <p>
+                        Unread
+                    </p>
+
+                </div>
+
+
+                <div class="notification-stat">
+
+                    <span class="notification-stat-icon">
+                        ⚠️
+                    </span>
+
+                    <h3>
+                        1
+                    </h3>
+
+                    <p>
+                        Important Alert
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATION CARD -->
+            <section class="notification-card">
+
+                <div class="notification-card-title">
+
+                    <span>
+                        📢
+                    </span>
+
+                    <h2>
+                        Recent Notifications
+                    </h2>
+
+                </div>
+
+
+                <!-- Notification 1 -->
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon warning">
+                        ⚠️
+                    </div>
+
+                    <div class="notification-content">
+
+                        <div class="notification-item-top">
+
+                            <h3>
+                                Acquisition Delay Detected
+                            </h3>
+
+                            <span>
+                                Today
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Survey Number SUR-1025 has exceeded
+                            the expected processing time by 18 days.
+                        </p>
+
+                        <a href="delay_detection.html">
+                            View Delay Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification 2 -->
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon verification-icon">
+                        ✅
+                    </div>
+
+                    <div class="notification-content">
+
+                        <div class="notification-item-top">
+
+                            <h3>
+                                Verification Update
+                            </h3>
+
+                            <span>
+                                Yesterday
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Document verification for SUR-1042
+                            is currently in progress.
+                        </p>
+
+                        <a href="verification.html">
+                            View Verification →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification 3 -->
+                <div class="notification-item">
+
+                    <div class="notification-item-icon compensation-icon">
+                        💰
+                    </div>
+
+                    <div class="notification-content">
+
+                        <div class="notification-item-top">
+
+                            <h3>
+                                Compensation Assessment
+                            </h3>
+
+                            <span>
+                                2 Days Ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Compensation assessment has been completed
+                            for survey number SUR-1088.
+                        </p>
+
+                        <a href="compensation.html">
+                            View Compensation →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification 4 -->
+                <div class="notification-item">
+
+                    <div class="notification-item-icon objection-icon">
+                        📝
+                    </div>
+
+                    <div class="notification-content">
+
+                        <div class="notification-item-top">
+
+                            <h3>
+                                Objection Status
+                            </h3>
+
+                            <span>
+                                3 Days Ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Your objection/grievance request has been
+                            received and is under review.
+                        </p>
+
+                        <a href="objection.html">
+                            View Objection →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification 5 -->
+                <div class="notification-item">
+
+                    <div class="notification-item-icon approval-icon">
+                        🏛️
+                    </div>
+
+                    <div class="notification-content">
+
+                        <div class="notification-item-top">
+
+                            <h3>
+                                Final Approval Update
+                            </h3>
+
+                            <span>
+                                5 Days Ago
+                            </span>
+
+                        </div>
+
+                        <p>
+                            Final government approval for SUR-1088
+                            has been completed.
+                        </p>
+
+                        <a href="approval.html">
+                            View Approval →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- IMPORTANT ALERT -->
+            <section class="notification-alert">
+
+                <div class="notification-alert-icon">
+                    🚨
+                </div>
+
+                <div>
+
+                    <h2>
+                        Important Alert
+                    </h2>
+
+                    <p>
+                        Survey Number SUR-1025 requires attention.
+                        The case has been delayed by 18 days during
+                        the verification stage.
+                    </p>
+
+                    <a href="delay_detection.html"
+                       class="notification-alert-btn">
+                        🔍 Check Delayed Case
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATION SETTINGS -->
+            <section class="notification-card">
+
+                <div class="notification-card-title">
+
+                    <span>
+                        ⚙️
+                    </span>
+
+                    <h2>
+                        Notification Preferences
+                    </h2>
+
+                </div>
+
+
+                <div class="notification-settings">
+
+                    <div class="setting-box">
+
+                        <div>
+                            <strong>
+                                🔔 Acquisition Updates
+                            </strong>
+
+                            <p>
+                                Receive updates about acquisition stages.
+                            </p>
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox" checked>
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-box">
+
+                        <div>
+                            <strong>
+                                ⚠️ Delay Alerts
+                            </strong>
+
+                            <p>
+                                Receive alerts when a case is delayed.
+                            </p>
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox" checked>
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-box">
+
+                        <div>
+                            <strong>
+                                💰 Compensation Updates
+                            </strong>
+
+                            <p>
+                                Receive compensation related updates.
+                            </p>
+                        </div>
+
+                        <label class="switch">
+
+                            <input type="checkbox" checked>
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INFORMATION -->
+            <div class="notification-info">
+
+                <div class="notification-info-icon">
+                    ℹ️
+                </div>
+
+                <div>
+
+                    <h3>
+                        About Notifications
+                    </h3>
+
+                    <p>
+                        Bhoomi Trek provides timely notifications
+                        about important changes in the land acquisition
+                        process. In the final system, notifications can
+                        be delivered through SMS, email and mobile
+                        application alerts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+            <div class="notification-actions">
+
+                <a href="dashboard.html"
+                   class="back-btn">
+                    ← Back to Dashboard
+                </a>
+
+                <a href="delay_detection.html"
+                   class="notification-next-btn">
+                    ⚠️ View Delay Detection
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    🌱 BHOOMI TREK
+                </h3>
+
+                <p>
+                    Transparent and efficient land acquisition
+                    management system.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="gis_map.html">
+                    GIS Map
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            © 2026 Bhoomi Trek | SIH 26016 Prototype
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
