@@ -78,7 +78,7 @@ function changeUserType() {
    CREATE PROFILE
 ========================================= */
 
-function createProfile() {
+async function createProfile() {
 
     const userType =
         document.getElementById("userType").value;
@@ -113,21 +113,18 @@ function createProfile() {
             address === "" ||
             password === ""
         ) {
-
             alert("Please fill all the fields.");
             return;
         }
 
 
         profile = {
-
             type: "citizen",
             name: name,
             mobile: mobile,
             email: email,
             address: address,
             password: password
-
         };
 
     }
@@ -164,14 +161,12 @@ function createProfile() {
             email === "" ||
             password === ""
         ) {
-
             alert("Please fill all the fields.");
             return;
         }
 
 
         profile = {
-
             type: "officer",
             name: name,
             department: department,
@@ -179,37 +174,87 @@ function createProfile() {
             employeeId: employeeId,
             email: email,
             password: password
-
         };
 
     }
 
 
-    /* SAVE PROFILE */
+    /* =========================================
+       REGISTER USER IN BACKEND DATABASE
+    ========================================= */
 
-    localStorage.setItem(
-        "bhoomiProfile",
-        JSON.stringify(profile)
-    );
+    try {
 
-
-    /* MARK USER AS LOGGED IN */
-
-    localStorage.setItem(
-        "bhoomiLoggedIn",
-        "true"
-    );
+        if (typeof apiRequest !== "function") {
+            alert("Backend connector is not loaded.");
+            return;
+        }
 
 
-    alert(
-        "Profile created successfully!"
-    );
+        await apiRequest("/api/auth/register", {
+            method: "POST",
+            body: JSON.stringify({
+                name: profile.name,
+                email: profile.email,
+                password: profile.password,
+                role: profile.type,
+                mobile: profile.mobile || "",
+                address: profile.address || "",
+                department: profile.department || "",
+                office: profile.office || "",
+                employeeId: profile.employeeId || ""
+            })
+        });
 
 
-    /* OPEN LOCATION SEARCH */
+        /* Save profile locally for existing SIH pages */
 
-    window.location.href =
-        "location_search.html";
+        localStorage.setItem(
+            "bhoomiProfile",
+            JSON.stringify(profile)
+        );
+
+
+        /* Mark user as logged in */
+
+        localStorage.setItem(
+            "bhoomiLoggedIn",
+            "true"
+        );
+
+
+        alert(
+            "Profile created successfully! You can now login with your email and password."
+        );
+
+
+        /* Go to login page */
+
+        window.location.href = "index.html";
+
+
+    } catch (error) {
+
+        console.error(
+            "Profile registration failed:",
+            error
+        );
+
+
+        if (
+            error.message &&
+            error.message.toLowerCase().includes("email already registered")
+        ) {
+            alert(
+                "This email is already registered. Please use another email or login with this email."
+            );
+        } else {
+            alert(
+                "Profile creation failed. Please try again."
+            );
+        }
+
+    }
 }
 
 

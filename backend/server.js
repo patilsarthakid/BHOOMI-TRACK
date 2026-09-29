@@ -43,7 +43,67 @@ function auth(req, res, next) {
 app.get("/api/health", (req, res) => {
   res.json({ ok: true, service: "Bhoomi Track" });
 });
+app.post("/api/auth/register", async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      password,
+      role = "citizen",
+      mobile = "",
+      address = "",
+      department = "",
+      office = "",
+      employeeId = ""
+    } = req.body;
 
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        error: "Name, email and password are required"
+      });
+    }
+
+    const existingUser = get(
+      "SELECT id FROM users WHERE email = ?",
+      email.trim().toLowerCase()
+    );
+
+    if (existingUser) {
+      return res.status(409).json({
+        error: "Email already registered"
+      });
+    }
+
+    const passwordHash = bcrypt.hashSync(password, 10);
+
+    const result = run(
+      `INSERT INTO users
+      (name,email,password_hash,role)
+      VALUES (?,?,?,?)`,
+      name.trim(),
+      email.trim().toLowerCase(),
+      passwordHash,
+      role
+    );
+
+    res.status(201).json({
+      success: true,
+      message: "Profile created successfully",
+      user: {
+        id: result.lastInsertRowid,
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        role
+      }
+    });
+
+  } catch (err) {
+    console.error("Registration error:", err);
+    res.status(500).json({
+      error: err.message
+    });
+  }
+});
 app.post("/api/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
